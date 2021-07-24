@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="sp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos addEventListener 24 Julio 2021</title>
+    <script src="app.js" type="module"></script>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <form action="GET" id="myFormulario">
+                <h1>Mi Formulario</h1>
+                <div class="container">
+                    <div class="row-form">
+                        <label for="inputTipoDoc">Selecione su tipo de documento</label>
+                        <select name="inputTipoDoc" id="inputTipoDoc">
+                            <option value="">Selecione una opcion</option>
+                            <option value="T.I">Tarjeta de identidad</option>
+                            <option value="C.C">Cedula Ciudadania</option>
+                            <option value="E.T">Pasaporte</option>
+                        </select>
+                    </div>
+                    <div class="row-form">
+                        <label for="inputDocumento">Ingrese su N°</label>
+                        <input type="number" id="inputDocumento">
+                    </div>
+                    <div class="row-form">
+                        <label for="inputNombre">Ingrese su nombre completo</label>
+                        <input type="text" id="inputNombre">
+                    </div>
+                    <div class="row-form">
+                        <label>Selecione su genero</label>
+                        <div class="generos">
+                            <input type="radio" name="inputGenero" id="inputGeneroM" value="M">
+                            <label for="inputGeneroM">Masculino</label>
+                            <input type="radio" name="inputGenero" id="inputGeneroF" value="F">
+                            <label for="inputGeneroF">Femenino</label>
+                            <input type="radio" name="inputGenero" id="inputGeneroO" value="O">
+                            <label for="inputGeneroO">Prefiero no decirlo</label>
+                        </div>
+                    </div>
+                    <div class="row-form">
+                        <label for="inputEdad" required>Ingrese su edad</label>
+                        <input type="number" id="inputEdad">
+                    </div>
+                    <div class="row-form">
+                        <label for="inputFechaNac">Ingrese su fecha de nacimiento</label>
+                        <input type="date" id="inputFechaNac">
+                    </div>
+                    <div class="row-form">
+                        <button type="button" id="myBoton">Enviar</button>
+                        <!-- <input type="submit" value="Enviar" id="myBoton"> -->
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <form action="GET" id="myFormularioPasatiempos">
+                <h1>Mis Pasatiempo</h1>
+                <div class="container">
+                    <div class="row-form">
+                        <div class="generos">
+                            <label for="inputHobbis" required>Selecione sus pasatiempo</label>
+                            <input type="checkbox" name="inputHobbis" id="inputHobbisA" value="Programar">
+                            <label for="inputHobbisA">Programar</label>
+                            <input type="checkbox" name="inputHobbis" id="inputHobbisB" value="Cocinar">
+                            <label for="inputHobbisB">Cocinar</label>
+                            <input type="checkbox" name="inputHobbis" id="inputHobbisC" value="Leer">
+                            <label for="inputHobbisC">Leer</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
