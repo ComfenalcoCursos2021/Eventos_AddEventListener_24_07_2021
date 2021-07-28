@@ -10,14 +10,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div hidden>
+        <input type="text" name="formulario[]" value="#myFormulario">
+        <input type="text" name="formulario[]" value="#myFormularioPasatiempos">
+    </div>
     <div class="container">
         <div class="row">
-            <form action="GET" id="myFormulario">
+            <form method="POST" id="myFormulario">
                 <h1>Mi Formulario</h1>
                 <div class="container">
                     <div class="row-form">
                         <label for="inputTipoDoc">Selecione su tipo de documento</label>
-                        <select name="inputTipoDoc" id="inputTipoDoc">
+                        <select name="inputTipoDoc" id="inputTipoDoc" required>
                             <option value="">Selecione una opcion</option>
                             <option value="T.I">Tarjeta de identidad</option>
                             <option value="C.C">Cedula Ciudadania</option>
@@ -26,11 +30,11 @@
                     </div>
                     <div class="row-form">
                         <label for="inputDocumento">Ingrese su N°</label>
-                        <input type="number" id="inputDocumento">
+                        <input type="number" id="inputDocumento" required>
                     </div>
                     <div class="row-form">
                         <label for="inputNombre">Ingrese su nombre completo</label>
-                        <input type="text" id="inputNombre">
+                        <input type="text" id="inputNombre" required>
                     </div>
                     <div class="row-form">
                         <label>Selecione su genero</label>
@@ -39,33 +43,43 @@
                             <label for="inputGeneroM">Masculino</label>
                             <input type="radio" name="inputGenero" id="inputGeneroF" value="F">
                             <label for="inputGeneroF">Femenino</label>
-                            <input type="radio" name="inputGenero" id="inputGeneroO" value="O">
+                            <input type="radio" name="inputGenero" id="inputGeneroO" value="O" checked>
                             <label for="inputGeneroO">Prefiero no decirlo</label>
                         </div>
                     </div>
                     <div class="row-form">
-                        <label for="inputEdad" required>Ingrese su edad</label>
+                        <label for="inputEdad">Ingrese su edad</label>
                         <input type="number" id="inputEdad">
                     </div>
                     <div class="row-form">
                         <label for="inputFechaNac">Ingrese su fecha de nacimiento</label>
-                        <input type="date" id="inputFechaNac">
+                        <input type="date" id="inputFechaNac" required>
                     </div>
                     <div class="row-form">
-                        <button type="button" id="myBoton">Enviar</button>
-                        <!-- <input type="submit" value="Enviar" id="myBoton"> -->
+                        <label for="textareaMensaje">Mensaje</label>
+                        <textarea name="textareaMensaje" id="textareaMensaje" cols="35" rows="10"></textarea>
+                    </div>
+                    <div class="generos">
+                        <input type="checkbox" name="inputTerminos" id="inputTerminosLey" value="Ley terminos y condiciones" required>
+                        <label for="inputTerminosLey">Ley terminos y condiciones</label>
+                        <input type="checkbox" name="inputTerminos" id="inputTerminosAcepto" value="Acepto terminos y condiciones" required>
+                        <label for="inputTerminosAcepto" >Acepto terminos y condiciones</label>
+                    </div>
+                    <div class="row-form">
+                        <!-- <button type="button" id="myBoton">Enviar</button> -->
+                        <input type="submit" value="Enviar" id="myBoton" form="myFormulario">
                     </div>
                 </div>
             </form>
         </div>
         <div class="row">
-            <form action="GET" id="myFormularioPasatiempos">
+            <form action="POST" id="myFormularioPasatiempos">
                 <h1>Mis Pasatiempo</h1>
                 <div class="container">
                     <div class="row-form">
                         <div class="generos">
-                            <label for="inputHobbis" required>Selecione sus pasatiempo</label>
-                            <input type="checkbox" name="inputHobbis" id="inputHobbisA" value="Programar">
+                            <label for="inputHobbis" >Selecione sus pasatiempo</label>
+                            <input type="checkbox" name="inputHobbis" id="inputHobbisA" value="Programar" required>
                             <label for="inputHobbisA">Programar</label>
                             <input type="checkbox" name="inputHobbis" id="inputHobbisB" value="Cocinar">
                             <label for="inputHobbisB">Cocinar</label>

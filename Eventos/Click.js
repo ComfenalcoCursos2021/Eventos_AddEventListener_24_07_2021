@@ -1,34 +1,25 @@
-const Enviar = ({...arg})=>{
-    const myBoton = document.querySelector(arg.id);
-    myBoton.addEventListener("click", (e)=>{
-        const myFormulario = document.querySelector(arg.form);
-        let mysInput = Array.from(myFormulario);
-        let myData = new FormData();
+const EnviarDatosFomulario = ({...arg})=>{
+    const fragmen = new DocumentFragment();
+    const formularioFragmen = document.createElement('FORM');
+    formularioFragmen.id = "myFormularioFragmen";
+    fragmen.append(formularioFragmen);
 
-        mysInput.map((value, indice)=>{
-       
-            if(value.type == "radio" && value.checked){
-                myData.set(value.id, value.value);
-            }else if(value.localName == "select"){
-                myData.set(value.id, value.value);
-            }else if(value.localName == "input" && value.type != "radio"){
-                myData.set(value.id, value.value);
-            }
-        })
-        //Arreglar :V
-        const MyFormHobis = document.querySelector("#myFormularioPasatiempos");
-        const MysChec = Array.from(MyFormHobis);
-            MysChec.map((value,indice)=>{
-            myData.append(value.name, (value.checked) ? value.value : null);
-     
-        })
-        let mesaje = ``;
-        for (var value of myData.keys()) {
-            mesaje += (value!='inputHobbis') ? `Key: ${value} data: ${myData.get(value)}\n` : `Key: ${value} data: ${myData.getAll(value)}\n`;
+    document.querySelector(arg.id).form.addEventListener("submit", (e)=>{
+        for(let formulario of arg.form){
+            Array.from(document.querySelector(formulario.value)).forEach(element => {
+                fragmen.children.myFormularioFragmen.appendChild(element);
+            });
         }
-        alert(mesaje);
-        e.preventDefault();
-    })
+        arg.myFormFragmen = fragmen;
+        let myData = arg.validarFormularios(arg);
+        for(let datos of myData.keys()){
+            console.log(`Identificador del id segun DOM: ${datos} datos del input: '${myData.get(datos)}'`);
+        }
+            alert("Usuario el formulario fue enviado exitosamente porfavor revisar la consola para ver los datos F12")
+            e.preventDefault();
+        })
+    
+   
 }
 
-export default Enviar;
+export default EnviarDatosFomulario;

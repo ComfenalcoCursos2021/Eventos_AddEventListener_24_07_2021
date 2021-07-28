@@ -1,6 +1,13 @@
-import Enviar from './Eventos/Click.js';
+import EnviarDatosFomulario from './Eventos/Click.js';
+import validarFormularios from './Logica/validarFormularios.js';
 
 addEventListener("DOMContentLoaded", (e)=>{
-    Enviar({id: "#myBoton", form: "#myFormulario"});
+    const config = {
+        EnviarDatosFomulario,
+        validarFormularios,
+        id: "#myBoton",
+        form: document.getElementsByName('formulario[]')
+    }
+    EnviarDatosFomulario(config);
     
 })
